@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Movie_App</string>
-    <string name="Login">Login</string>
+    <string name="newAccount">Login</string>
+    <string name="back_button">Back</string>
+    <string name="action_about">About</string>
+
 </resources>

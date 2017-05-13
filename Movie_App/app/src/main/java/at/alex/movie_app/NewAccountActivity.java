@@ -11,22 +11,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
-
-    private Button newAccount;
-
-
-
+public class NewAccountActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-
-        newAccount = (Button) findViewById(R.id.btn_createaccount);
-        newAccount.setOnClickListener(this);
-
+        setContentView(R.layout.activity_new_account);
     }
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -40,8 +34,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.action_about:
-                startActivity(new Intent(this, NewAccountActivity.class));
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
                 return true;
 
         }
@@ -49,13 +43,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
-    private void switchNewAccount()
-    {
-        Intent newAccountIntent = new Intent(this, NewAccountActivity.class);
-        startActivity(newAccountIntent);
-    }
-
-
+/*
     @Override
     public void onClick(View v) {
         Button clickedButton = (Button) v;
@@ -63,10 +51,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         switch (clickedButton.getId()) {
             case R.id.btn_createaccount:
+                Toast.makeText(getApplicationContext(),
+                        "Server timeout!", Toast.LENGTH_SHORT).show();
                 switchNewAccount();
                 break;
         }
 
 
     }
+    */
+
+
 }
